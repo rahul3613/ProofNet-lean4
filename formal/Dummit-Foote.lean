@@ -322,17 +322,8 @@ theorem exercise_7_3_16 {R S : Type*} [Ring R] [Ring S]
   φ '' (center R) ⊂ center S :=
 sorry
 
--- this doesn't make sense with statement
-
--- Prove that the ideal pZ/p^m Z is a nilpotent ideal in the ring Z/p^m Z
-
--- theorem exercise_7_3_37 {R : Type*} {p m : ℕ} (hp : p.Prime)
---   (N : Ideal $ ZMod $ p^m) :
---   IsNilpotent N ↔  IsNilpotent (span ({p} : Set $ ZMod $ p^m)) :=
--- sorry
-
 theorem exercise_7_3_37 {p m : ℕ} (hp : p.Prime) :
-  IsNilpotent (span ({↑p} : Set $ ZMod $ p^m)) :=
+  IsNilpotent (span ({↑p} : Set $ ZMod $ p^m) : Ideal $ ZMod $ p^m) :=
 sorry
 
 theorem exercise_7_4_27 {R : Type*} [CommRing R] (hR : (0 : R) ≠ 1)
