@@ -1,2 +1,2 @@
 # ProofNet-lean4
-ProofNet dataset ported into Lean 4
+**This is the Lean 4 version of the ProofNet dataset, originally present in the repository https://github.com/zhangir-azerbayev/ProofNet.**
