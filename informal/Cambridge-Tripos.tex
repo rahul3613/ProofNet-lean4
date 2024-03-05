@@ -1,0 +1,43 @@
+\documentclass{article}
+
+\title{\textbf{
+Exercises from \\
+\textit{Cambridge Tripos}
+}}
+
+\date{}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\begin{document}
+\maketitle
+
+
+\paragraph{Exercise 2022.IA.4-I-1E-a} Show that there are infinitely many primes of the form $3 n+2$ with $n \in \mathbb{N}$.
+\begin{proof}
+    The general strategy is to find a (large) number $n$ that is relatively prime to each of the existing list of such primes, and is also congruent to 2 modulo 3 . The prime factorization of $n$ cannot consist only of primes congruent to 1 modulo 3 , since the product of any number of such is still 1 modulo 3 . Hence there must be some prime factor of $n$ that is congruent to 2 modulo 3 , which must be not on our list by the construction of $n$.
+Now, how to construct such an $n$ ? Suppose the finite list is $\left\{p_1, p_2, \ldots, p_k\right\}$. If $k$ is even, then take $n=p_1 p_2 \cdots p_k+1$. If $k$ is odd, then take $n=\left(p_1 p_2 \cdots p_k\right) p_k+1$.
+\end{proof}
+
+
+\paragraph{Exercise 2022.IA.4-I-2D-a} Prove that $\sqrt[3]{2}+\sqrt[3]{3}$ is irrational.
+\begin{proof}
+    Suppose $\frac{a}{b} = \sqrt[3]{2}+\sqrt[3]{3}$ for $a,b\in\mathbb{Z}$. Cubing both sides, we get $a^3/b^3 = 2 + 3 \sqrt[3]{12} + 3\sqrt[3]{18}+3$. Therefore we have $\frac{c}{d} = \sqrt[3]{12} + \sqrt[3]{18}$ for some rational $c/d\in\mathbb{Q}$. Cubing both sides we get $c^3/d^3 = 81000\sqrt{3}$, which is a contradiction.
+\end{proof}
+
+
+\paragraph{Exercise 2022.IB.3-II-13G-a-i} Let $U \subset \mathbb{C}$ be a (non-empty) connected open set and let $f_n$ be a sequence of holomorphic functions defined on $U$. Suppose that $f_n$ converges uniformly to a function $f$ on every compact subset of $U$. Show that $f$ is holomorphic in $U$.
+\begin{proof}
+    Let $\Delta \subset D$ be a closed triangle. Since each $f_n$ is holomorphic, by Cauchy's theorem, you have $\int_{\partial \Delta} f_n(z) d z=0$ for all $n$.
+$\partial \Delta$ is a compact subset of $D$, so you know that $f_n \rightarrow f$ uniformly on $\partial \Delta$.
+So you get, for all $n$,
+$$
+\left|\int_{\partial \Delta} f(z) d z\right|=\left|\int_{\partial \Delta}\left(f(z)-f_n(z)\right) d z\right| \leq \operatorname{length}(\partial \Delta)
+$$
+By letting $n \rightarrow \infty$, you find that $\int_{\partial \Delta} f(z) d z=0$.
+By Morera's theorem, $f$ is holomorphic.
+\end{proof}
+
+\end{document}
