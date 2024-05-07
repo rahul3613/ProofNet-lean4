@@ -414,7 +414,7 @@ This set is countable because the set of finite subsets of $\mathbb{N}$ is count
 \paragraph{Exercise 30.13} Show that if $X$ has a countable dense subset, every collection of disjoint open sets in $X$ is countable.
 \begin{proof}
     Let $\mathcal{U}$ be a collection of disjoint open sets in $X$ and let $A$ be a countable dense subset of $X$.
-Since $A$ is dense in $X$, every $U \in \mathcal{U}$ intesects $S$. Therefore, there exists a point $x_U \in U \cap S$.
+Since $A$ is dense in $X$, every $U \in \mathcal{U}$ intersects $S$. Therefore, there exists a point $x_U \in U \cap S$.
 Let $U_1, U_2 \in \mathcal{U}, U_1 \neq U_2$. Then $x_{U_1} \neq x_{U_2}$ since $U_1 \cap U_2=\emptyset$.
 Thus, the function $\mathcal{U} \rightarrow S$ given by $U \mapsto x_U$ is injective and therefore, since $S$ is countable, it follows that $\mathcal{U}$ is countable.
 \end{proof}
@@ -598,7 +598,7 @@ By the fact that $\{0,1\}$ is compact and Hausdorff we can extend $f$ to a surje
 
 \paragraph{Exercise 43.2} Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces; let $Y$ be complete. Let $A \subset X$. Show that if $f \colon A \rightarrow Y$ is uniformly continuous, then $f$ can be uniquely extended to a continuous function $g \colon \bar{A} \rightarrow Y$, and $g$ is uniformly continuous.
 \begin{proof}
-    Let $\left(X, d_X\right)$ and $\left(Y, d_Y\right)$ be metric spaces; let $Y$ be complete. Let $A \subset X$. It is also given that $f: A \longrightarrow X$ is a uniformly continuous function. Then we have to show that $f$ can be uniquely extended to a continuous function $g: \bar{A} \longrightarrow Y$, and $g$ is uniformly coninuous.
+    Let $\left(X, d_X\right)$ and $\left(Y, d_Y\right)$ be metric spaces; let $Y$ be complete. Let $A \subset X$. It is also given that $f: A \longrightarrow X$ is a uniformly continuous function. Then we have to show that $f$ can be uniquely extended to a continuous function $g: \bar{A} \longrightarrow Y$, and $g$ is uniformly continuous.
 We define the function $g$ as follows:
 $$
 g(x)= \begin{cases}f(x) & \text { if } x \in A \\ \lim _{n \rightarrow \infty} f\left(x_n\right) & \text { if } x \in \bar{A},\end{cases}

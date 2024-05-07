@@ -153,7 +153,7 @@ Thus $\sum a_n b_n=\sum z^n / n$ converges for every point in the unit circle ex
 
 \paragraph{Exercise 1.26} Suppose $f$ is continuous in a region $\Omega$. Prove that any two primitives of $f$ (if they exist) differ by a constant.
 \begin{proof}
-    Suppose $F_1$ adn $F_2$ are primitives of $F$. Then $(F_1-F_2)^\prime = f - f = 0$, therefore $F_1$ and $F_2$ differ by a constant. 
+    Suppose $F_1$ and $F_2$ are primitives of $F$. Then $(F_1-F_2)^\prime = f - f = 0$, therefore $F_1$ and $F_2$ differ by a constant. 
 \end{proof}
 
 
@@ -275,7 +275,7 @@ Look at $f(1 / z)$. If it has an essential singularity at 0 , then pick any $z_0
 
 \paragraph{Exercise 5.1} Prove that if $f$ is holomorphic in the unit disc, bounded and not identically zero, and $z_{1}, z_{2}, \ldots, z_{n}, \ldots$ are its zeros $\left(\left|z_{k}\right|<1\right)$, then $\sum_{n}\left(1-\left|z_{n}\right|\right)<\infty$.
 \begin{proof}
-    Fix $\mathrm{N}$ and let $D(0, R)$ contains the first $\mathrm{N}$ zeroes of f. Let $S_N=\sum_{k=1}^N\left(1-\left|z_k\right|\right)=$ $\sum_{k=1}^N \int_{\left|z_k\right|}^1 1 d r$. Let $\eta_k$ be the characteristic function of the interval $\left.\| z_k \mid, 1\right]$. We have $S_N=\sum_{k=1}^N \int_0^1 \eta(r) d r=\int_0^1\left(\sum_{k=1}^N \eta_k(r)\right) d r \leq \int_0^1 n(r) d r$, where $n(r)$ is the number of zeroes of $f$ at the disk $D(0, r)$. For $r \leq 1$ we have $n(r) \leq \frac{n(r)}{r}$. This means that $S_N \leq \int_0^1 n(r) \frac{d r}{r}$. If $f(0)=0$ then we have $f(z)=z^m g(z)$ for some integer $\mathrm{m}$ and some holomorphic $g$ with $g(0) \neq 0$. The other zeroes of $\mathrm{f}$ are precisely the zeroes of $g$. Thus we have reduced the problem to $f(0) \neq 0$. By the Corollary of the Jensen's equality we get $S_N \leq \int_0^1 n(r) \frac{d r}{r}=\frac{1}{2 \pi} \int_0^{2 \pi} \log \left|f\left(R e^{i \pi}\right)\right| d \phi-\log |f(0)|<M$ since $f$ is bounded. The partial sums of the series are boundend and therefore the series converges.
+    Fix $\mathrm{N}$ and let $D(0, R)$ contains the first $\mathrm{N}$ zeroes of f. Let $S_N=\sum_{k=1}^N\left(1-\left|z_k\right|\right)=$ $\sum_{k=1}^N \int_{\left|z_k\right|}^1 1 d r$. Let $\eta_k$ be the characteristic function of the interval $\left.\| z_k \mid, 1\right]$. We have $S_N=\sum_{k=1}^N \int_0^1 \eta(r) d r=\int_0^1\left(\sum_{k=1}^N \eta_k(r)\right) d r \leq \int_0^1 n(r) d r$, where $n(r)$ is the number of zeroes of $f$ at the disk $D(0, r)$. For $r \leq 1$ we have $n(r) \leq \frac{n(r)}{r}$. This means that $S_N \leq \int_0^1 n(r) \frac{d r}{r}$. If $f(0)=0$ then we have $f(z)=z^m g(z)$ for some integer $\mathrm{m}$ and some holomorphic $g$ with $g(0) \neq 0$. The other zeroes of $\mathrm{f}$ are precisely the zeroes of $g$. Thus we have reduced the problem to $f(0) \neq 0$. By the Corollary of the Jensen's equality we get $S_N \leq \int_0^1 n(r) \frac{d r}{r}=\frac{1}{2 \pi} \int_0^{2 \pi} \log \left|f\left(R e^{i \pi}\right)\right| d \phi-\log |f(0)|<M$ since $f$ is bounded. The partial sums of the series are bounded and therefore the series converges.
 \end{proof}
 
 

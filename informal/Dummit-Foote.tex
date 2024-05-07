@@ -663,28 +663,28 @@ $$
 
 \paragraph{Exercise 4.4.6a} Prove that characteristic subgroups are normal.
 \begin{proof}
-    Let $H$ be a characterestic subgroup of $G$. By definition $\alpha(H) \subset H$ for every $\alpha \in \operatorname{Aut}(G)$. So, $H$ is in particular invariant under the inner automorphism. Let $\phi_g$ denote the conjugation automorphism by $g$. Then $\phi_g(H) \subset H \Longrightarrow$ $g H g^{-1} \subset H$. So, $H$ is normal. 
+    Let $H$ be a characteristic subgroup of $G$. By definition $\alpha(H) \subset H$ for every $\alpha \in \operatorname{Aut}(G)$. So, $H$ is in particular invariant under the inner automorphism. Let $\phi_g$ denote the conjugation automorphism by $g$. Then $\phi_g(H) \subset H \Longrightarrow$ $g H g^{-1} \subset H$. So, $H$ is normal. 
 \end{proof}
 
 
 
 \paragraph{Exercise 4.4.6b} Prove that there exists a normal subgroup that is not characteristic.
 \begin{proof}
-    We have to produce a group $G$ and a subgroup $H$ such that $H$ is normal in $G$, but not characterestic. Consider the Klein's four group $G=\{ e, a, b, a b\}$. This is an abelian group with each element having order 2. Consider $H=\{ e, a\}$. $H$ is normal in $G$. Define $\sigma: G \rightarrow G$ as $\sigma(a)=b, \sigma(b)=a, \sigma(a b)=a b$. Clearly $\sigma$ does not fix $H$. So, $H$ is not characterestic.
+    We have to produce a group $G$ and a subgroup $H$ such that $H$ is normal in $G$, but not characteristic. Consider the Klein's four group $G=\{ e, a, b, a b\}$. This is an abelian group with each element having order 2. Consider $H=\{ e, a\}$. $H$ is normal in $G$. Define $\sigma: G \rightarrow G$ as $\sigma(a)=b, \sigma(b)=a, \sigma(a b)=a b$. Clearly $\sigma$ does not fix $H$. So, $H$ is not characteristic.
 \end{proof}
 
 
 
 \paragraph{Exercise 4.4.7} If $H$ is the unique subgroup of a given order in a group $G$ prove $H$ is characteristic in $G$.
 \begin{proof}
-    Let $G$ be group and $H$ be the unique subgroup of order $n$. Now, let $\sigma \in \operatorname{Aut}(G)$. Now Clearly $|\sigma(G)|=n$, because $\sigma$ is a one-one onto map. But then as $H$ is the only subgroup of order $n$, and because of the fact that a automorphism maps subgroups to subgroups, we have $\sigma(H)=$ $H$ for every $\sigma \in \operatorname{Aut}(G)$. Hence, $H$ is a characterestic subgroup of $G$.
+    Let $G$ be group and $H$ be the unique subgroup of order $n$. Now, let $\sigma \in \operatorname{Aut}(G)$. Now Clearly $|\sigma(G)|=n$, because $\sigma$ is a one-one onto map. But then as $H$ is the only subgroup of order $n$, and because of the fact that a automorphism maps subgroups to subgroups, we have $\sigma(H)=$ $H$ for every $\sigma \in \operatorname{Aut}(G)$. Hence, $H$ is a characteristic subgroup of $G$.
 \end{proof}
 
 
 
 \paragraph{Exercise 4.4.8a} Let $G$ be a group with subgroups $H$ and $K$ with $H \leq K$. Prove that if $H$ is characteristic in $K$ and $K$ is normal in $G$ then $H$ is normal in $G$.
 \begin{proof}
-We prove that $H$ is invariant under every inner automorphism of $G$. Consider a inner automorphism $\phi_g$ of $G$. Now, $\left.\phi_g\right|_K$ is a automorphism of $K$ because $K$ is normal in $G$. But $H$ is a characterestic subgroup of $K$, so $\left.\phi_g\right|_K(H) \subset H$, so in general $\phi_g(H) \subset H$. Hence $H$ is characteretstic in $G$.
+We prove that $H$ is invariant under every inner automorphism of $G$. Consider a inner automorphism $\phi_g$ of $G$. Now, $\left.\phi_g\right|_K$ is a automorphism of $K$ because $K$ is normal in $G$. But $H$ is a characteristic subgroup of $K$, so $\left.\phi_g\right|_K(H) \subset H$, so in general $\phi_g(H) \subset H$. Hence $H$ is characteristic in $G$.
 \end{proof}
 
 
@@ -719,7 +719,7 @@ Let $n_{13}$ be the number of Sylow 13 -subgroup of $G$. Then by Sylow's Theorem
 
 \paragraph{Exercise 4.5.16} Let $|G|=p q r$, where $p, q$ and $r$ are primes with $p<q<r$. Prove that $G$ has a normal Sylow subgroup for either $p, q$ or $r$.
 \begin{proof}
-    Let $|G|=p q r$. We also assume $p<q<r$. We prove that $G$ has a normal Sylow subgroup of $p$, $q$ or $r$. Now, Let $n_p, n_q, n_r$ be the number of Sylow-p subgroup, Sylow-q subgroup, Sylow-r subgroup resp. So, we have $n_r=1+r k$ such that $1+r k \mid p q$. So, in this case as $r$ is greatest $n_r$ can be 1 or $p q$. We assume $n_r=p q$. Now we have $n_q=1+q k$ such that $1+q k \mid p r$. Now,as $p<q<r, n_q$ can be 1 or $r$, or $p r$. Assume that $n_q=r$. Now we turn to $n_p$. Again my similar method we can conclude $n_p$ can be $1, q, r$, or $q r$. We assume that $n_p$ is $q$. Now we count the number of elements of order $p, q, r$. Since $n_r=p q$, the number of elements of order $r$ is $p q(r-1)$. Since $n_q=r$, the number of elements of order $q$ is $(q-1) r$. And as $n_p=q$, the number of elements of order $p$ is $(p-1) q$. So, in total we get $p q(r-1)+(q-1) r+(p-$ 1) $q=p q r+q r-r-q=p q r+r(q-1)-r$. But observe that as $q>1, r(q-1)-r>$ 0 . So the number of elements exceeds $p q r$. So, it proves that atleast $n_p$ or $n_q$ or $n_r$ is 1, which ultimately proves the result, because a unique Sylow-p subgroup is always normal.
+    Let $|G|=p q r$. We also assume $p<q<r$. We prove that $G$ has a normal Sylow subgroup of $p$, $q$ or $r$. Now, Let $n_p, n_q, n_r$ be the number of Sylow-p subgroup, Sylow-q subgroup, Sylow-r subgroup resp. So, we have $n_r=1+r k$ such that $1+r k \mid p q$. So, in this case as $r$ is greatest $n_r$ can be 1 or $p q$. We assume $n_r=p q$. Now we have $n_q=1+q k$ such that $1+q k \mid p r$. Now,as $p<q<r, n_q$ can be 1 or $r$, or $p r$. Assume that $n_q=r$. Now we turn to $n_p$. Again my similar method we can conclude $n_p$ can be $1, q, r$, or $q r$. We assume that $n_p$ is $q$. Now we count the number of elements of order $p, q, r$. Since $n_r=p q$, the number of elements of order $r$ is $p q(r-1)$. Since $n_q=r$, the number of elements of order $q$ is $(q-1) r$. And as $n_p=q$, the number of elements of order $p$ is $(p-1) q$. So, in total we get $p q(r-1)+(q-1) r+(p-$ 1) $q=p q r+q r-r-q=p q r+r(q-1)-r$. But observe that as $q>1, r(q-1)-r>$ 0 . So the number of elements exceeds $p q r$. So, it proves that at least $n_p$ or $n_q$ or $n_r$ is 1, which ultimately proves the result, because a unique Sylow-p subgroup is always normal.
 \end{proof}
 
 
@@ -1031,7 +1031,7 @@ Consider the family of subsets $X=\left\{\left\{x_{2 k+1}, x_{2 k+2}\right\} \mi
 For each $\lambda \in Y$ we have the ideal $I_\lambda=(\lambda(0), \lambda(1), \ldots)$.
 All these ideals are distinct, ie for $\lambda \neq \lambda^{\prime}$ we have $I_\lambda \neq I_{\lambda^{\prime}}$.
 We also have that by construction $K \subset I_\lambda$ for all $\lambda \in Y$.
-By the Third Isomorphism Treorem
+By the Third Isomorphism Theorem
 $$
 (R / K) /\left(I_\lambda / K\right) \cong R / I_\lambda
 $$
@@ -1057,7 +1057,7 @@ Therefore for any coefficient $f_i$ of $f(x)$ and $g_j$ of $g(x)$ we have that $
 $$
 x^4-4 x^3+6
 $$
-The polynomial is irreducible by Eisenstiens Criterion since the prime $2$ doesnt divide the leading coefficient 2 divide coefficients of the low order term $-4,0,0$ but 6 is not divided by the square of 2.
+The polynomial is irreducible by Eisenstein's Criterion since the prime $2$ doesn't divide the leading coefficient 2 divide coefficients of the low order term $-4,0,0$ but 6 is not divided by the square of 2.
 \end{proof}
 
 
@@ -1068,7 +1068,7 @@ The polynomial is irreducible by Eisenstiens Criterion since the prime $2$ doesn
 x^6+30 x^5-15 x^3+6 x-120
 $$
 The coefficients of the low order.: $30,-15,0,6,-120$
-They are divisible by the prime 3 , but $3^2=9$ doesn 't divide $-120$. So this polynomial is irreducible over $\mathbb{Z}$. 
+They are divisible by the prime 3 , but $3^2=9$ doesn't divide $-120$. So this polynomial is irreducible over $\mathbb{Z}$. 
 \end{proof}
 
 
@@ -1095,7 +1095,7 @@ $$
 & q(x)=x^4+2 x^3-8 x^2+8 x-2
 \end{aligned}
 $$
-$q(x)$ is irreducible by Eisenstiens Criterion since the prime $\$ 2 \$$ divides the lower coefficient but $\$ 2^{\wedge} 2 \$$ doesnt divide constant $-2$. Any factorization of $p(x)$ would provide a factor of $p(x)(x-1)$
+$q(x)$ is irreducible by Eisenstein's Criterion since the prime $\$ 2 \$$ divides the lower coefficient but $\$ 2^{\wedge} 2 \$$ doesnt divide constant $-2$. Any factorization of $p(x)$ would provide a factor of $p(x)(x-1)$
 Since:
 $$
 \begin{aligned}
@@ -1133,7 +1133,7 @@ k
 \end{array}\right) x^{p-k-1}=2^k \cdot p \cdot(p-1) \ldots(p-k-1), \quad 0<k<p
 \end{aligned}
 $$
-Every lower order coef. has $p$ as a factor but doesnt have $\$ \mathrm{p}^{\wedge} 2 \$$ as a fuction so the polynomial is irreducible by Eisensteins Criterion.
+Every lower order coef. has $p$ as a factor but doesnt have $\$ \mathrm{p}^{\wedge} 2 \$$ as a fuction so the polynomial is irreducible by Eisenstein's Criterion.
 \end{proof}
 
 
@@ -1160,7 +1160,7 @@ So $p(x)$ is irredicible over $Z[\sqrt{2}]$.
 $$
 p(x)=x^2+y^2-1 \in Q[y][x] \cong Q[y, x]
 $$
-We have that $y+1 \in Q[y]$ is prime and $Q[y]$ is an UFD, since $p(x)=x^2+y^2-1=x^2+$ $(y+1)(y-1)$ by the Eisenstein criterion $x^2+y^2-1$ is irreducibile in $Q[x, y]$.
+We have that $y+1 \in Q[y]$ is prime and $Q[y]$ is an UFD, since $p(x)=x^2+y^2-1=x^2+$ $(y+1)(y-1)$ by the Eisenstein's Criterion $x^2+y^2-1$ is irreducibile in $Q[x, y]$.
 \end{proof}
 
 
