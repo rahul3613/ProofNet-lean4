@@ -41,7 +41,7 @@ theorem exercise_2010_a4 (n : ℕ) :
 sorry
 
 theorem exercise_2001_a5 :
-  ∃! a n : ℕ, a > 0 ∧ n > 0 ∧ a^(n+1) - (a+1)^n = 2001 :=
+  ∃! a : ℕ, ∃! n : ℕ, a > 0 ∧ n > 0 ∧ a^(n+1) - (a+1)^n = 2001 :=
 sorry
 
 theorem exercise_2000_a2 :
