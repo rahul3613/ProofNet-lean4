@@ -14,21 +14,21 @@ theorem exercise_1_13b {f : ℂ → ℂ} (Ω : Set ℂ) (a b : Ω) (h : IsOpen �
 sorry
 
 theorem exercise_1_13c {f : ℂ → ℂ} (Ω : Set ℂ) (a b : Ω) (h : IsOpen Ω)
-  (hf : DifferentiableOn ℂ f Ω) (hc : ∃ (c : ℝ), ∀ z ∈ Ω, abs (f z) = c) :
+  (hf : DifferentiableOn ℂ f Ω) (hc : ∃ (c : ℝ), ∀ z ∈ Ω, norm (f z) = c) :
   f a = f b :=
 sorry
 
-theorem exercise_1_19a (z : ℂ) (hz : abs z = 1) (s : ℕ → ℂ)
+theorem exercise_1_19a (z : ℂ) (hz : norm z = 1) (s : ℕ → ℂ)
     (h : s = (λ n => ∑ i in (range n), i * z ^ i)) :
     ¬ ∃ y, Tendsto s atTop (𝓝 y) :=
 sorry
 
-theorem exercise_1_19b (z : ℂ) (hz : abs z = 1) (s : ℕ → ℂ)
+theorem exercise_1_19b (z : ℂ) (hz : norm z = 1) (s : ℕ → ℂ)
     (h : s = (λ n => ∑ i in (range n), i * z / i ^ 2)) :
     ∃ y, Tendsto s atTop (𝓝 y) :=
 sorry
 
-theorem exercise_1_19c (z : ℂ) (hz : abs z = 1) (hz2 : z ≠ 1) (s : ℕ → ℂ)
+theorem exercise_1_19c (z : ℂ) (hz : norm z = 1) (hz2 : z ≠ 1) (s : ℕ → ℂ)
     (h : s = (λ n => ∑ i in (range n), i * z / i)) :
     ∃ z, Tendsto s atTop (𝓝 z) :=
 sorry
