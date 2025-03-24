@@ -70,7 +70,7 @@ theorem exercise_1_6_4 :
   IsEmpty (Multiplicative ℝ ≃* Multiplicative ℂ) :=
 sorry
 
-theorem exercise_1_6_11 {A B : Type*} [Group A] [Group B] :
+instance exercise_1_6_11 {A B : Type*} [Group A] [Group B] :
   A × B ≃* B × A :=
 sorry
 
@@ -278,8 +278,8 @@ theorem exercise_4_5_23 {G : Type*} [Fintype G] [Group G]
   (hG : card G = 462) : ¬ IsSimpleGroup G :=
 sorry
 
-theorem exercise_4_5_28 {G : Type*} [Group G] [Fintype G]
-  (hG : card G = 105) (P : Sylow 3 G) [hP : P.Normal] :
+instance exercise_4_5_28 {G : Type*} [Group G] [Fintype G]
+  (hG : card G = 105) {P : Sylow 3 G} (hP : P.Normal) :
   CommGroup G :=
 sorry
 
@@ -305,7 +305,7 @@ theorem exercise_7_1_12 {F : Type*} [Field F] {K : Subring F}
   (hK : (1 : F) ∈ K) : IsDomain K :=
 sorry
 
-theorem exercise_7_1_15 {R : Type*} [Ring R] (hR : ∀ a : R, a^2 = a) :
+instance exercise_7_1_15 {R : Type*} [Ring R] (hR : ∀ a : R, a^2 = a) :
   CommRing R :=
 sorry
 
@@ -407,6 +407,6 @@ theorem exercise_9_4_11 :
   Irreducible ((MvPolynomial.X 0)^2 + (MvPolynomial.X 1)^2 - 1 : MvPolynomial (Fin 2) ℚ) :=
 sorry
 
-theorem exercise_11_1_13 {ι : Type*} [Fintype ι] :
+instance exercise_11_1_13 {ι : Type*} [Fintype ι] :
   (ι → ℝ) ≃ₗ[ℚ] ℝ :=
 sorry
