@@ -9,7 +9,7 @@ theorem exercise_2_1_18 {G : Type*} [Group G]
   ∃ (a : G), a ≠ 1 ∧ a = a⁻¹ :=
 sorry
 
-theorem exercise_2_1_21 (G : Type*) [Group G] [Fintype G]
+instance exercise_2_1_21 (G : Type*) [Group G] [Fintype G]
   (hG : card G = 5) :
   CommGroup G :=
 sorry
@@ -22,12 +22,12 @@ theorem exercise_2_1_27 {G : Type*} [Group G]
   [Fintype G] : ∃ (m : ℕ), ∀ (a : G), a ^ m = 1 :=
 sorry
 
-theorem exercise_2_2_3 {G : Type*} [Group G]
+instance exercise_2_2_3 {G : Type*} [Group G]
   {P : ℕ → Prop} {hP : P = λ i => ∀ a b : G, (a*b)^i = a^i * b^i}
   (hP1 : ∃ n : ℕ, P n ∧ P (n+1) ∧ P (n+2)) : CommGroup G :=
 sorry
 
-theorem exercise_2_2_5 {G : Type*} [Group G]
+instance exercise_2_2_5 {G : Type*} [Group G]
   (h : ∀ (a b : G), (a * b) ^ 3 = a ^ 3 * b ^ 3 ∧ (a * b) ^ 5 = a ^ 5 * b ^ 5) :
   CommGroup G :=
 sorry
@@ -68,12 +68,12 @@ theorem exercise_2_5_31 {G : Type*} [CommGroup G] [Fintype G]
   Subgroup.Characteristic H :=
 sorry
 
-theorem exercise_2_5_37 (G : Type*) [Group G] [Fintype G]
+instance exercise_2_5_37 (G : Type*) [Group G] [Fintype G]
   (hG : card G = 6) (hG' : IsEmpty (CommGroup G)) :
   G ≃* Equiv.Perm (Fin 3) :=
 sorry
 
-theorem exercise_2_5_43 (G : Type*) [Group G] [Fintype G]
+instance exercise_2_5_43 (G : Type*) [Group G] [Fintype G]
   (hG : card G = 9) :
   CommGroup G :=
 sorry
@@ -101,13 +101,13 @@ theorem exercise_2_7_7 {G : Type*} [Group G] {G' : Type*} [Group G']
   (Subgroup.map φ N).Normal  :=
 sorry
 
-theorem exercise_2_8_12 {G H : Type*} [Fintype G] [Fintype H]
+instance exercise_2_8_12 {G H : Type*} [Fintype G] [Fintype H]
   [Group G] [Group H] (hG : card G = 21) (hH : card H = 21)
   (hG1 : IsEmpty (CommGroup G)) (hH1 : IsEmpty (CommGroup H)) :
   G ≃* H :=
 sorry
 
-theorem exercise_2_8_15 {G H: Type*} [Fintype G] [Group G] [Fintype H]
+instance exercise_2_8_15 {G H: Type*} [Fintype G] [Group G] [Fintype H]
   [Group H] {p q : ℕ} (hp : Nat.Prime p) (hq : Nat.Prime q)
   (h : p > q) (h1 : q ∣ p - 1) (hG : card G = p*q) (hH : card G = p*q) :
   G ≃* H :=
@@ -147,10 +147,10 @@ sorry
 theorem exercise_4_1_19 : Infinite {x : Quaternion ℝ | x^2 = -1} :=
 sorry
 
-theorem exercise_4_1_34 : Equiv.Perm (Fin 3) ≃* Matrix.GeneralLinearGroup (Fin 2) (ZMod 2) :=
+instance exercise_4_1_34 : Equiv.Perm (Fin 3) ≃* Matrix.GeneralLinearGroup (Fin 2) (ZMod 2) :=
 sorry
 
-theorem exercise_4_2_5 {R : Type*} [Ring R]
+instance exercise_4_2_5 {R : Type*} [Ring R]
   (h : ∀ x : R, x ^ 3 = x) : CommRing R :=
 sorry
 
