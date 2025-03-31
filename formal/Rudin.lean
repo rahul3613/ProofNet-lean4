@@ -31,7 +31,7 @@ sorry
 
 theorem exercise_1_5 (A minus_A : Set ℝ) (hA : A.Nonempty)
   (hA_bdd_below : BddBelow A) (hminus_A : minus_A = {x | -x ∈ A}) :
-  Inf A = Sup minus_A :=
+  Min A = Max minus_A :=
 sorry
 
 theorem exercise_1_8 : ¬ ∃ (r : ℂ → ℂ → Prop), IsLinearOrder ℂ r :=
