@@ -159,7 +159,7 @@ theorem exercise_4_2_6 {R : Type*} [Ring R] (a x : R)
 sorry
 
 theorem exercise_4_2_9 {p : ℕ} (hp : Nat.Prime p) (hp1 : Odd p) :
-  ∃ (a b : ℤ), (a / b : ℚ) = ∑ i in Finset.range p, 1 / (i + 1) → ↑p ∣ a :=
+  ∃ (a b : ℤ), (a / b : ℚ) = ∑ i ∈ Finset.range p, 1 / (i + 1) → ↑p ∣ a :=
 sorry
 
 theorem exercise_4_3_1 {R : Type*} [CommRing R] (a : R) :

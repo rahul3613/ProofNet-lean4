@@ -42,7 +42,7 @@ theorem exercise_1_11a (z : ℂ) :
 sorry
 
 theorem exercise_1_12 (n : ℕ) (f : ℕ → ℂ) :
-  norm (∑ i in range n, f i) ≤ ∑ i in range n, norm (f i) :=
+  norm (∑ i ∈ range n, f i) ≤ ∑ i ∈ range n, norm (f i) :=
 sorry
 
 theorem exercise_1_13 (x y : ℂ) :
@@ -159,29 +159,29 @@ sorry
 def g (n : ℕ) : ℝ := sqrt (n + 1) - sqrt n
 
 theorem exercise_3_6a
-: Tendsto (λ (n : ℕ) => (∑ i in range n, g i)) atTop atTop :=
+: Tendsto (λ (n : ℕ) => (∑ i ∈ range n, g i)) atTop atTop :=
 sorry
 
 theorem exercise_3_7
   (a : ℕ → ℝ)
-  (h : ∃ y, (Tendsto (λ n => (∑ i in (range n), a i)) atTop (𝓝 y))) :
-  ∃ y, Tendsto (λ n => (∑ i in (range n), sqrt (a i) / n)) atTop (𝓝 y) :=
+  (h : ∃ y, (Tendsto (λ n => (∑ i ∈ (range n), a i)) atTop (𝓝 y))) :
+  ∃ y, Tendsto (λ n => (∑ i ∈ (range n), sqrt (a i) / n)) atTop (𝓝 y) :=
 sorry
 
 theorem exercise_3_8
   (a b : ℕ → ℝ)
-  (h1 : ∃ y, (Tendsto (λ n => (∑ i in (range n), a i)) atTop (𝓝 y)))
+  (h1 : ∃ y, (Tendsto (λ n => (∑ i ∈ (range n), a i)) atTop (𝓝 y)))
   (h2 : Monotone b)
   (h3 : Bornology.IsBounded (Set.range b)) :
-  ∃ y, Tendsto (λ n => (∑ i in (range n), (a i) * (b i))) atTop (𝓝 y) :=
+  ∃ y, Tendsto (λ n => (∑ i ∈ (range n), (a i) * (b i))) atTop (𝓝 y) :=
 sorry
 
 theorem exercise_3_13
   (a b : ℕ → ℝ)
-  (ha : ∃ y, (Tendsto (λ n => (∑ i in (range n), |a i|)) atTop (𝓝 y)))
-  (hb : ∃ y, (Tendsto (λ n => (∑ i in (range n), |b i|)) atTop (𝓝 y))) :
-  ∃ y, (Tendsto (λ n => (∑ i in (range n),
-  λ i => (∑ j in range (i + 1), a j * b (i - j)))) atTop (𝓝 y)) :=
+  (ha : ∃ y, (Tendsto (λ n => (∑ i ∈ (range n), |a i|)) atTop (𝓝 y)))
+  (hb : ∃ y, (Tendsto (λ n => (∑ i ∈ (range n), |b i|)) atTop (𝓝 y))) :
+  ∃ y, (Tendsto (λ n => (∑ i ∈ (range n),
+  λ i => (∑ j ∈ range (i + 1), a j * b (i - j)))) atTop (𝓝 y)) :=
 sorry
 
 theorem exercise_3_20 {X : Type*} [MetricSpace X]
@@ -332,8 +332,8 @@ sorry
 
 theorem exercise_5_4 {n : ℕ}
   (C : ℕ → ℝ)
-  (hC : ∑ i in (range (n + 1)), (C i) / (i + 1) = 0) :
-  ∃ x, x ∈ (Set.Icc (0 : ℝ) 1) ∧ ∑ i in range (n + 1), (C i) * (x^i) = 0 :=
+  (hC : ∑ i ∈ (range (n + 1)), (C i) / (i + 1) = 0) :
+  ∃ x, x ∈ (Set.Icc (0 : ℝ) 1) ∧ ∑ i ∈ range (n + 1), (C i) * (x^i) = 0 :=
 sorry
 
 theorem exercise_5_5
