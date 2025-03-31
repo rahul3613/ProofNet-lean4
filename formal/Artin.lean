@@ -18,7 +18,7 @@ theorem exercise_2_4_19 {G : Type*} [Group G] {x : G}
   x ∈ center G :=
 sorry
 
-theorem exercise_2_8_6 {G H : Type*} [Group G] [Group H] :
+instance exercise_2_8_6 {G H : Type*} [Group G] [Group H] :
   center (G × H) ≃* (center G) × (center H) :=
 sorry
 

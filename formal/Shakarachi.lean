@@ -14,22 +14,22 @@ theorem exercise_1_13b {f : ℂ → ℂ} (Ω : Set ℂ) (a b : Ω) (h : IsOpen �
 sorry
 
 theorem exercise_1_13c {f : ℂ → ℂ} (Ω : Set ℂ) (a b : Ω) (h : IsOpen Ω)
-  (hf : DifferentiableOn ℂ f Ω) (hc : ∃ (c : ℝ), ∀ z ∈ Ω, abs (f z) = c) :
+  (hf : DifferentiableOn ℂ f Ω) (hc : ∃ (c : ℝ), ∀ z ∈ Ω, norm (f z) = c) :
   f a = f b :=
 sorry
 
-theorem exercise_1_19a (z : ℂ) (hz : abs z = 1) (s : ℕ → ℂ)
-    (h : s = (λ n => ∑ i in (range n), i * z ^ i)) :
+theorem exercise_1_19a (z : ℂ) (hz : norm z = 1) (s : ℕ → ℂ)
+    (h : s = (λ n => ∑ i ∈ (range n), i * z ^ i)) :
     ¬ ∃ y, Tendsto s atTop (𝓝 y) :=
 sorry
 
-theorem exercise_1_19b (z : ℂ) (hz : abs z = 1) (s : ℕ → ℂ)
-    (h : s = (λ n => ∑ i in (range n), i * z / i ^ 2)) :
+theorem exercise_1_19b (z : ℂ) (hz : norm z = 1) (s : ℕ → ℂ)
+    (h : s = (λ n => ∑ i ∈ (range n), i * z / i ^ 2)) :
     ∃ y, Tendsto s atTop (𝓝 y) :=
 sorry
 
-theorem exercise_1_19c (z : ℂ) (hz : abs z = 1) (hz2 : z ≠ 1) (s : ℕ → ℂ)
-    (h : s = (λ n => ∑ i in (range n), i * z / i)) :
+theorem exercise_1_19c (z : ℂ) (hz : norm z = 1) (hz2 : z ≠ 1) (s : ℕ → ℂ)
+    (h : s = (λ n => ∑ i ∈ (range n), i * z / i)) :
     ∃ z, Tendsto s atTop (𝓝 z) :=
 sorry
 
@@ -52,9 +52,9 @@ sorry
 
 theorem exercise_2_13 {f : ℂ → ℂ}
     (hf : ∀ z₀ : ℂ, ∃ (s : Set ℂ) (c : ℕ → ℂ), IsOpen s ∧ z₀ ∈ s ∧
-      ∀ z ∈ s, Tendsto (λ n => ∑ i in range n, (c i) * (z - z₀)^i) atTop (𝓝 (f z₀))
+      ∀ z ∈ s, Tendsto (λ n => ∑ i ∈ range n, (c i) * (z - z₀)^i) atTop (𝓝 (f z₀))
       ∧ ∃ i, c i = 0) :
-    ∃ (c : ℕ → ℂ) (n : ℕ), f = λ z => ∑ i in range n, (c i) * z ^ n :=
+    ∃ (c : ℕ → ℂ) (n : ℕ), f = λ z => ∑ i ∈ range n, (c i) * z ^ n :=
 sorry
 
 
@@ -84,5 +84,5 @@ sorry
 theorem exercise_5_1 (f : ℂ → ℂ) (hf : DifferentiableOn ℂ f (ball 0 1))
   (hb : Bornology.IsBounded (Set.range f)) (h0 : f ≠ 0) (zeros : ℕ → ℂ) (hz : ∀ n, f (zeros n) = 0)
   (hzz : Set.range zeros = {z | f z = 0 ∧ z ∈ (ball (0 : ℂ) 1)}) :
-  ∃ (z : ℂ), Tendsto (λ n => (∑ i in range n, (1 - zeros i))) atTop (𝓝 z) :=
+  ∃ (z : ℂ), Tendsto (λ n => (∑ i ∈ range n, (1 - zeros i))) atTop (𝓝 z) :=
 sorry
