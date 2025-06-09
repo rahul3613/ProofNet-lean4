@@ -1,0 +1,13 @@
+#!/bin/sh
+
+REPO_ROOT=$(git rev-parse --show-toplevel)
+JSONL_SCRIPT="$REPO_ROOT/script/build_proofnet_jsonl.py"
+
+python3 $JSONL_SCRIPT 2>/dev/null
+
+if [ $? -ne 0 ]; then
+	echo "WARN: jsonl genreration failed"
+else
+    git add $REPO_ROOT/proofnet_lean4.jsonl
+fi
+exit 0

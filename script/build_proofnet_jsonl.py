@@ -131,10 +131,11 @@ def main():
                 outp.write('\n')
 
     # log missing informal
-    log_file = os.path.join(base, 'script', 'missing_informal.log')
-    with open(log_file, 'w', encoding='utf-8') as lf:
-        for nm in sorted(set(log_missing)):
-            lf.write(f"{nm}\n")
+    log_file = os.path.join(base, 'missing_informal.log')
+    if log_missing:
+        with open(log_file, 'w', encoding='utf-8') as lf:
+            for nm in sorted(set(log_missing)):
+                lf.write(f"{nm}\n")
     print(f"Generated {output_file}, logged {len(set(log_missing))} missing informal entries to {log_file}")
 
 if __name__ == '__main__':
