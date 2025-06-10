@@ -1,3 +1,5 @@
 /build
 /lake-packages/*
 /.lake
+script/missing_informal.log
+script/__pycache__/

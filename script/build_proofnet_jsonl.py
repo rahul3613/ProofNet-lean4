@@ -20,6 +20,36 @@ import json
 from typing import List, Dict, Set, Tuple
 
 
+def create_sort_key(name: str) -> Tuple:
+    """Create a sorting key that handles numeric parts correctly.
+    
+    For names like 'Artin_exercise_2_11_3', this will create a tuple with proper
+    numeric sorting. For mixed alphanumeric parts like '3a' or '16c', it will
+    split them into numeric and alphabetic components for proper sorting.
+    """
+    parts = name.split('_')
+    sort_key = []
+    
+    for i, part in enumerate(parts):
+        if part.isdigit():
+            # Pure numeric part: (0, number, '')
+            sort_key.append((0, int(part), ''))
+        else:
+            # Check if this is a mixed alphanumeric part (like '3a', '16c')
+            match = re.match(r'^(\d+)([a-zA-Z]+)$', part)
+            if match:
+                # Mixed alphanumeric: (0, numeric_part, alpha_part)
+                # This ensures 2a comes before 11, but after 2
+                numeric_part = int(match.group(1))
+                alpha_part = match.group(2)
+                sort_key.append((0, numeric_part, alpha_part))
+            else:
+                # Pure string part: (1, 0, string)
+                sort_key.append((1, 0, part))
+    
+    return tuple(sort_key)
+
+
 def extract_local_bindings(declaration_text: str) -> Set[str]:
     """Extract local variable names from a declaration."""
     local_vars = set()
@@ -254,34 +284,40 @@ def main():
             path = os.path.join(informal_dir, fname)
             informal_texts[key] = open(path, 'r', encoding='utf-8').read()
 
-    # build entries and write jsonl
+    # build entries first
+    all_records = []
+    for f_name in os.listdir(formal_dir):
+        if not f_name.endswith('.lean'): continue
+        fpath = os.path.join(formal_dir, f_name)
+        # determine the key for informal tex lookup by file name without extension
+        file_key = os.path.splitext(f_name)[0]
+        header, source, entries = parse_formal_file(fpath)
+        for e in entries:
+            orig = e['orig_name']
+            # lookup informal tex by the formal file base name
+            tex_text = informal_texts.get(file_key)
+            if tex_text:
+                inf_stmt, inf_proof = parse_informal_tex(tex_text, orig)
+            else:
+                inf_stmt = inf_proof = None
+                log_missing.append(e['name'])
+            record = {
+                'name': e['name'],
+                'source': source,
+                'header': header,
+                'formal_statement': e['formal_statement'],
+                'formal_proof': e['formal_proof'],
+                'informal_stmt': inf_stmt,
+                'informal_proof': inf_proof
+            }
+            all_records.append(record)
+    
+    # sort records by name using numeric-aware sorting and write jsonl
+    all_records.sort(key=lambda x: create_sort_key(x['name']))
     with open(output_file, 'w', encoding='utf-8') as outp:
-        for f_name in os.listdir(formal_dir):
-            if not f_name.endswith('.lean'): continue
-            fpath = os.path.join(formal_dir, f_name)
-            # determine the key for informal tex lookup by file name without extension
-            file_key = os.path.splitext(f_name)[0]
-            header, source, entries = parse_formal_file(fpath)
-            for e in entries:
-                orig = e['orig_name']
-                # lookup informal tex by the formal file base name
-                tex_text = informal_texts.get(file_key)
-                if tex_text:
-                    inf_stmt, inf_proof = parse_informal_tex(tex_text, orig)
-                else:
-                    inf_stmt = inf_proof = None
-                    log_missing.append(e['name'])
-                record = {
-                    'name': e['name'],
-                    'source': source,
-                    'header': header,
-                    'formal_statement': e['formal_statement'],
-                    'formal_proof': e['formal_proof'],
-                    'informal_stmt': inf_stmt,
-                    'informal_proof': inf_proof
-                }
-                json.dump(record, outp, ensure_ascii=False)
-                outp.write('\n')
+        for record in all_records:
+            json.dump(record, outp, ensure_ascii=False)
+            outp.write('\n')
 
     # log missing informal
     log_file = os.path.join(base, 'script', 'missing_informal.log')
