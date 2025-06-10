@@ -212,7 +212,7 @@ theorem exercise_23_9 {X Y : Type*}
 sorry
 
 theorem exercise_23_11 {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-  (p : X → Y) (hq : QuotientMap p)
+  (p : X → Y) (hq : IsQuotientMap p)
   (hY : ConnectedSpace Y) (hX : ∀ y : Y, IsConnected (p ⁻¹' {y})) :
   ConnectedSpace X :=
 sorry
